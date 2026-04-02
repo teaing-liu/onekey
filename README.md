@@ -6,13 +6,13 @@
 ### 方式一：下载后运行（推荐）
 
 ```bash
-wget -O /root/new-onekey.sh https://raw.githubusercontent.com/sinian-liu/new-onekey/main/new-onekey.sh && chmod +x /root/new-onekey.sh && /root/new-onekey.sh
+wget -O /root/new-onekey.sh https://raw.githubusercontent.com/anjing-liu/new-onekey/main/new-onekey.sh && chmod +x /root/new-onekey.sh && /root/new-onekey.sh
 ```
 
 ### 方式二：直接运行
 
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/sinian-liu/new-onekey/main/new-onekey.sh)
+bash <(curl -sL https://raw.githubusercontent.com/anjing-liu/new-onekey/main/new-onekey.sh)
 
 ```
 
