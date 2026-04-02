@@ -84,7 +84,7 @@ install_3xui() {
 
     check_wget
 
-    printf "y\nsinian\nsinian\n5321\na\n" | bash <(curl -Ls https://raw.githubusercontent.com/sinian-liu/3x-ui/master/install.sh)
+    printf "y\nsinian\nsinian\n5321\na\n" | bash <(curl -Ls https://raw.githubusercontent.com/anjing-liu/3x-ui/master/install.sh)
 
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}3X-UI 搭建完成！${RESET}"
