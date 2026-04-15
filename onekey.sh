@@ -1494,7 +1494,7 @@ show_menu() {
             1)
                 # VPS 一键测试脚本
                 echo -e "${GREEN}正在进行 VPS 测试 ...${RESET}"
-                curl -sL https://raw.githubusercontent.com/teaing-liu/server_test/main/server_test.sh -o /tmp/system_info.sh
+                curl -sL https://raw.githubusercontent.com/teaing-liu/server_test/master/server_test.sh -o /tmp/system_info.sh
                 if [ $? -eq 0 ]; then
                     chmod +x /tmp/system_info.sh
                     bash /tmp/system_info.sh
