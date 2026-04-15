@@ -20,9 +20,9 @@ auto_install() {
         echo -e "${YELLOW}首次运行，正在安装...${RESET}"
         
         local clone_urls=(
-            "https://github.com/sinian-liu/new-onekey.git"
-            "https://gh.llkk.cc/github.com/sinian-liu/new-onekey.git"
-            "https://mirror.ghproxy.com/https://github.com/sinian-liu/new-onekey.git"
+            "https://github.com/teaing-liu/new-onekey.git"
+            "https://gh.llkk.cc/github.com/teaing-liu/new-onekey.git"
+            "https://mirror.ghproxy.com/https://github.com/teaing-liu/new-onekey.git"
         )
         
         local installed=false
@@ -38,7 +38,7 @@ auto_install() {
             echo -e "${RED}下载失败，请尝试以下方法：${RESET}"
             echo -e "${YELLOW}1. 等待网络稳定后重试${RESET}"
             echo -e "${YELLOW}2. 手动下载：${RESET}"
-            echo -e "   git clone https://github.com/sinian-liu/new-onekey.git /root/new-onekey"
+            echo -e "   git clone https://github.com/teaing-liu/new-onekey.git /root/new-onekey"
             echo -e "${YELLOW}3. 或使用代理加速${RESET}"
             exit 1
         fi
