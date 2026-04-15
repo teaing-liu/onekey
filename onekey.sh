@@ -1480,7 +1480,7 @@ show_menu() {
             0)
                 # 脚本更新
                 echo -e "${GREEN}正在更新脚本...${RESET}"
-                wget -O /tmp/onekey.sh https://raw.githubusercontent.com/anjing-liu/onekey/main/onekey.sh
+                wget -O /tmp/onekey.sh https://raw.githubusercontent.com/teaing-liu/onekey/main/onekey.sh
                 if [ $? -eq 0 ]; then
                     mv /tmp/onekey.sh /usr/local/bin/onekey.sh
                     chmod +x /usr/local/bin/onekey.sh
@@ -1494,7 +1494,7 @@ show_menu() {
             1)
                 # VPS 一键测试脚本
                 echo -e "${GREEN}正在进行 VPS 测试 ...${RESET}"
-                curl -sL https://raw.githubusercontent.com/anjing-liu/server_test/main/server_test.sh -o /tmp/system_info.sh
+                curl -sL https://raw.githubusercontent.com/teaing-liu/server_test/main/server_test.sh -o /tmp/system_info.sh
                 if [ $? -eq 0 ]; then
                     chmod +x /tmp/system_info.sh
                     bash /tmp/system_info.sh
@@ -1713,7 +1713,7 @@ show_menu() {
         # 8. 安装原始 BBR
         install_original_bbr() {
             echo -e "${YELLOW}正在安装原始 BBR ...${RESET}"
-            wget -O /tmp/tcpx.sh "https://github.com/anjing-liu/Linux-NetSpeed/raw/master/tcpx.sh" && \
+            wget -O /tmp/tcpx.sh "https://github.com/teaing-liu/Linux-NetSpeed/raw/master/tcpx.sh" && \
             chmod +x /tmp/tcpx.sh && \
             bash /tmp/tcpx.sh && \
             rm -f /tmp/tcpx.sh
@@ -2051,7 +2051,7 @@ EOF
             3)
                 # 安装 v2ray 脚本
                 echo -e "${GREEN}正在安装 v2ray ...${RESET}"
-                wget -P /tmp -N --no-check-certificate "https://raw.githubusercontent.com/anjing-liu/v2ray-agent/master/install.sh"
+                wget -P /tmp -N --no-check-certificate "https://raw.githubusercontent.com/teaing-liu/v2ray-agent/master/install.sh"
                 if [ $? -eq 0 ]; then
                     chmod 700 /tmp/install.sh
                     bash /tmp/install.sh
@@ -6041,7 +6041,7 @@ BKSHEOF"
                 fi
                 sysctl net.ipv4.tcp_congestion_control
                 echo -e "${YELLOW}正在下载并运行 3X-UI 安装脚本...${RESET}"
-                printf "y\nsinian\nsinian\n5321\na\n" | bash <(curl -Ls https://raw.githubusercontent.com/anjing-liu/3x-ui/master/install.sh)
+                printf "y\nsinian\nsinian\n5321\na\n" | bash <(curl -Ls https://raw.githubusercontent.com/teaing-liu/3x-ui/master/install.sh)
                 echo ""
                 echo -e "${GREEN}╔══════════════════════════════════════════╗${RESET}"
                 echo -e "${GREEN}║         3X-UI 安装完成！            ║${RESET}"
