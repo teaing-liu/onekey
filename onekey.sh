@@ -1491,19 +1491,60 @@ show_menu() {
                 fi
                 read -p "按回车键返回主菜单..."
                 ;;
-            1)
-                # VPS 一键测试脚本
-                echo -e "${GREEN}正在进行 VPS 测试 ...${RESET}"
-                curl -sL https://raw.githubusercontent.com/teaing-liu/server_test/master/server_test.sh -o /tmp/system_info.sh
-                if [ $? -eq 0 ]; then
-                    chmod +x /tmp/system_info.sh
-                    bash /tmp/system_info.sh
-                    rm -f /tmp/system_info.sh
-                else
-                    echo -e "${RED}下载 VPS 测试脚本失败，请检查网络！${RESET}"
-                fi
-                read -p "按回车键返回主菜单..."
-                ;;
+1)
+    # VPS 一键测试脚本
+    echo -e "${GREEN}正在进行 VPS 测试 ...${RESET}"
+    
+    # 定义测试脚本的固定存放路径
+    TEST_SCRIPT_PATH="/root/server_test.sh"
+    
+    # 确保 /root 目录存在且可写
+    if [ ! -d "/root" ]; then
+        echo -e "${RED}/root 目录不存在！${RESET}"
+        read -p "按回车键返回主菜单..."
+        continue
+    fi
+    
+    # 下载测试脚本（强制覆盖，确保最新版本）
+    echo -e "${YELLOW}正在下载测试脚本到 $TEST_SCRIPT_PATH ...${RESET}"
+    wget -O "$TEST_SCRIPT_PATH" https://raw.githubusercontent.com/teaing-liu/server_test/master/server_test.sh --no-check-certificate
+    
+    # 检查下载是否成功
+    if [ $? -ne 0 ] || [ ! -f "$TEST_SCRIPT_PATH" ]; then
+        echo -e "${RED}下载 VPS 测试脚本失败，请检查网络！${RESET}"
+        read -p "按回车键返回主菜单..."
+        continue
+    fi
+    
+    # 设置执行权限（确保 root 用户可执行）
+    chmod +x "$TEST_SCRIPT_PATH"
+    if [ $? -ne 0 ]; then
+        echo -e "${RED}设置执行权限失败！${RESET}"
+        read -p "按回车键返回主菜单..."
+        continue
+    fi
+    
+    # 验证文件可执行
+    if [ ! -x "$TEST_SCRIPT_PATH" ]; then
+        echo -e "${RED}脚本文件无法执行，请检查权限！${RESET}"
+        read -p "按回车键返回主菜单..."
+        continue
+    fi
+    
+    echo -e "${GREEN}脚本准备就绪，开始运行测试...${RESET}"
+    
+    # 运行测试脚本
+    bash "$TEST_SCRIPT_PATH"
+    
+    # 检查运行结果
+    if [ $? -ne 0 ]; then
+        echo -e "${RED}测试脚本运行出错！${RESET}"
+    else
+        echo -e "${GREEN}测试完成！${RESET}"
+    fi
+    
+    read -p "按回车键返回主菜单..."
+    ;;
             2)
     # BBR 和 BBR v3 安装与管理
     echo -e "${GREEN}正在进入 BBR 和 BBR v3 安装与管理菜单...${RESET}"
