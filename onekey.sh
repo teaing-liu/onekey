@@ -6082,7 +6082,7 @@ BKSHEOF"
                 fi
                 sysctl net.ipv4.tcp_congestion_control
                 echo -e "${YELLOW}正在下载并运行 3X-UI 安装脚本...${RESET}"
-                printf "y\nsinian\nsinian\n5321\na\n" | bash <(curl -Ls https://raw.githubusercontent.com/teaing-liu/3x-ui/master/install.sh)
+                printf "\n5321\nsinian\nsinian\na\n\n\n\n\n" | bash <(curl -Ls https://raw.githubusercontent.com/teaing-liu/3x-ui/master/install.sh)
                 echo ""
                 echo -e "${GREEN}╔══════════════════════════════════════════╗${RESET}"
                 echo -e "${GREEN}║         3X-UI 安装完成！            ║${RESET}"
